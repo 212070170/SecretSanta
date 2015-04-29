@@ -1,0 +1,87 @@
+<html>
+<head>
+    <link rel="stylesheet" href="public/components/Bootstrap.3.2.0/css/bootstrap.css"/>
+    <link rel="stylesheet" href="public/components/Bootstrap.3.2.0/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="public/components/font-awesome-4.1.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="public/css/custom.css"/>
+    <link rel="stylesheet/less" href="public/less/custom.less"/>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bootstrap and Angular Project Template</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a  ui-sref="home"><i class="fa fa-file-text" ></i> About</a></li>
+                <li  ui-sref-active="active"><a ui-sref="tech"><i class="fa fa-gears" ></i> How we do it</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users" ></i> Documents <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+        <div ui-view="mainView" class="col-sm-12 col-xs-12"></div>
+    </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+<div class="container">
+    <div id="technologies" class="pull-right">
+        <img  src="public/images/559px-JQuery_UI_Logo.svg.png" style="height:30px;" class/>
+        <img  src="public/images/AngularJS-large.png" style="height:30px;"/>
+        <img  src="public/images/bootstrap.png" style="height:30px;"/>
+        <img  src="public/images/css31.png" style="height:30px;"/>
+        <img  src="public/images/HTML5_Logo_512.png" style="height:30px;"/>
+        <img  src="public/images/less.png" style="height:30px;"/>
+    </div>
+</div>
+</nav>
+</body>
+<script src="public/components/requirejs/require.js" type="application/javascript"></script>
+<script src="public/js/bootstrapper.js" type="application/javascript"></script>
+
+</html>
