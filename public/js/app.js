@@ -31,7 +31,7 @@ define([
     ]);
 
     myApp.run(['$location', '$rootScope', function($location, $rootScope) {
-
+   /**/
     }]);
 
 
