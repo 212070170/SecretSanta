@@ -3,22 +3,22 @@
  */
 require.config({
     enforceDefine : false,
-
+    
     paths:{
-        app:'./js/app',
-        angular: './components/angular/angular',
-        lessjs: './js/less.min',
-        'angular-resource': './components/angular-resource/angular-resource',
-        'angular-route': './components/angular-route/angular-route',
-        require: './components/requirejs/require',
-        jquery: './components/jquery-dist/jquery',
-        'angular-ui-router': './components/angular-ui-router/release/angular-ui-router',
-        'angular-mocks': './components/angular-mocks/angular-mocks',
-        'bootstrap-3.2.0':'./components/Bootstrap.3.2.0/js/bootstrap.min',
+        app:'./app',
+        angular: '../components/angular/angular',
+        lessjs: './less.min',
+        'angular-resource': '../components/angular-resource/angular-resource',
+        'angular-route': '../components/angular-route/angular-route',
+        require: '../components/requirejs/require',
+        jquery: '../components/jquery-dist/jquery',
+        'angular-ui-router': '../components/angular-ui-router/release/angular-ui-router',
+        'angular-mocks': '../components/angular-mocks/angular-mocks',
+        'bootstrap-3.2.0':'../components/Bootstrap.3.2.0/js/bootstrap.min',
 
 
         // Named References
-        config: './js/config',
+        config: './config',
 
         //Angular App Modules
         'controllers-module': 'controllers/module',

@@ -22,19 +22,11 @@ define([ 'angular', 'controllers/main', 'angular-ui-router' ], function (angular
            * This is where the name of the route is matched to the controller and view template.
            */
           $stateProvider
-              .state('home',{
+              .state('home', {
                   url: '/home',
                   views: {
-                      mainView: {templateUrl: 'modules/base/index.view.html', controller: 'baseCtrl'},
-                      secondaryView: {templateUrl: 'modules/register/index.view.html'}
-
-                  }
-              }
-          )
-              .state('tech',{
-                  url: '/tech',
-                  views: {
-                      mainView: {templateUrl: '/Directives/modules/technology/technology.index.html', controller: 'techCtrl'}
+                      headerView: {templateUrl: 'public/views/header.html', controller: 'MainCtrl'},
+                      bodyView: {templateUrl: 'public/views/home.html', controller: 'HomeCtrl'}
 
                   }
               }

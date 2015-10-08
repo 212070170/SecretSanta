@@ -10,8 +10,8 @@ define([
     'filters/main',
     'services/main',
     'controllers/main',
-    'js/routes',
-    'js/interceptors'
+    'routes',
+    'interceptors'
 ], function (require, $, angular, ngResource, directives, filters, services, controllers, routes, interceptors) {
     'use strict';
 
@@ -32,10 +32,34 @@ define([
 
     myApp.run(['$location', '$rootScope', function($location, $rootScope) {
    /* this is the app run module*/
+
     }]);
 
 
-    myApp.controller('MainCtrl',['$scope','Session_factory', function($scope,session){
+    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory', function($scope,$rootScope,session){
+        //Global application object
+        window.App = $rootScope.App = {
+            version: '1.0',
+            name: 'Predix Seed',
+            session: {},
+            tabs: [
+                {state: 'home', label: "Home"},
+                {state: 'about', label: "About"}
+            ]
+        };
+
+
+
+        //Unbind all widgets from datasources and widgets when page changes
+        $rootScope.$on('$routeChangeStart', function () {
+            //vRuntime.binder.unbindAll();
+        });
+
+        $rootScope.logout = function (event) {
+            event.preventDefault();
+            location.replace('logout');
+        };
+
 
 
     }])
