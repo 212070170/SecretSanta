@@ -1,0 +1,70 @@
+.container{
+    /*position:relative;*/
+    left: 0px;
+    transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    -ms-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+}
+.container.push.push-away-left{
+
+    left: 250px;
+    transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    -ms-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+}
+.container.push.push-away-right{
+
+    left: -250px;
+    transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    -ms-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+}
+.slidingPanel{
+    display: block;
+    position: fixed;
+    top: 0px;
+    overflow:hidden;
+    z-index: 10000;
+    background: #222;
+    width: 250px;
+    min-height: 100%;
+    -webkit-box-shadow: inset -34px 0px 65px -28px rgba(0,0,0,0.55);
+    -moz-box-shadow: inset -34px 0px 65px -28px rgba(0,0,0,0.55);
+    box-shadow: inset -34px 0px 65px -28px rgba(0,0,0,0.55);
+    opacity: 0.95;
+    filter: alpha(opacity=95); /* For IE8 and earlier */
+    overflow-y:auto;
+    height:100%;
+
+}
+.slidingPanel.left{
+    visibility: visible !important;
+    left:-250px !important;
+    transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    -ms-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+}
+.slidingPanel.right{
+    visibility: visible !important;
+    right:-250px !important;
+    transition: right 0.3s ease;
+    -webkit-transition: right 0.3s ease;
+    -moz-transition: right 0.3s ease;
+    -ms-transition: right 0.3s ease;
+    -o-transition: right 0.3s ease;
+}
+.slide-away.left {
+    left:0px !important;
+}
+
+.slide-away.right {
+    right:0px !important;
+}

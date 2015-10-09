@@ -1,0 +1,14 @@
+<form class="form-horizontal center" action="">
+    <div class="eventTitle">
+        Cadastro
+    </div>
+    <input type="name" ng-model="user.username" id="user1" class="form-control" placeholder="usuario"/>
+
+    <input type="email" ng-model="user.email1" id="email1" class="form-control" placeholder="e-mail"/>
+    <input type="email" ng-model="user.email2" id="email2" class="form-control" placeholder="Confirme seu e-mail"/>
+
+    <input type="password" ng-model="user.pw1" id="password1" class="form-control" placeholder="senha"/>
+    <input type="password" ng-model="user.pw2" id="password2" class="form-control" placeholder="Confirme a senha"/>
+    <button type="submit" class="btn btn-large btn-primary" ng-click="doRegister()">Registrar</button>
+    <div class="text-center">ou<br><a ui-sref="login">Clique aqui</a> para retornar ao login</div>
+</form>

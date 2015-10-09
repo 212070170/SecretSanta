@@ -1,7 +1,8 @@
 
 define(['angular',
     'directives-module',
-    './sample-directive'
+    './sample-directive',
+    './slidingPanel/ngSlidingPanel'
 ], function() {
 
 });

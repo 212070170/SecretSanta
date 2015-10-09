@@ -1,0 +1,71 @@
+.deadCenter(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0px !important;
+}
+.centerLeftRight(){
+  margin-left: auto;
+  margin-right: auto;
+}
+.verticalAlign() {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.horizontalAlign() {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.deadCenter(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.gradient (@origin: left, @start: #FFFFFF, @stop: #000000) {
+  background-color: @start;
+  background-image: -webkit-linear-gradient(@origin, @start, @stop);
+  background-image: -moz-linear-gradient(@origin, @start, @stop);
+  background-image: -o-linear-gradient(@origin, @start, @stop);
+  background-image: -ms-linear-gradient(@origin, @start, @stop);
+  background-image: linear-gradient(@origin, @start, @stop);
+}
+.trans (@style: opacity, @duration: 0.7s, @mode:ease) {
+  transition: @style @duration @mode;
+  -webkit-transition: @style @duration @mode;
+  -moz-transition: @style @duration @mode;
+  -ms-transition: @style @duration @mode;
+  -o-transition: @style @duration @mode;
+}
+
+.center{
+  .deadCenter();
+}
+.mainChoices{
+  .deadCenter();
+}
+
+body{
+  .gradient(top,red,darkred);
+}

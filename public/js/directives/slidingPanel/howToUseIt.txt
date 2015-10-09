@@ -1,0 +1,13 @@
+<ng-sliding-panel from="left" behavior="push" button-open="openLeft" id="leftPanel">XXXX</ng-sliding-panel>
+<ng-sliding-panel from="right" behavior="push" button-open="openRight" id="rightPanel">XXXX</ng-sliding-panel>
+
+<ng-sliding-panel from="left" behavior="overlap" button-open="openLeftOverlap" id="leftPanel">XXXX</ng-sliding-panel>
+<ng-sliding-panel from="right" behavior="overlap" button-open="openRightOverlap" id="rightPanel">XXXX</ng-sliding-panel>
+
+    <button id="openLeftPush"> < Open</button>
+    <button id="openRightPush">Open ></button>
+
+    <button id="openLeftOverlap"> < Open</button>
+    <button id="openRightOverlap">Open ></button>
+
+    Add Class class="dismissSliders" to whatever element that needs to close the slider when clicked

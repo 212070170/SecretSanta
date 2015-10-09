@@ -36,11 +36,12 @@ define([
     }]);
 
 
-    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory', function($scope,$rootScope,session){
+    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory','user', function($scope,$rootScope,session,User){
+        $scope.user = User;
         //Global application object
         window.App = $rootScope.App = {
             version: '1.0',
-            name: 'Predix Seed',
+            name: 'Amigo Secreto',
             session: {},
             tabs: [
                 {state: 'home', label: "Home"},

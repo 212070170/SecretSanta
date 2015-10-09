@@ -1,10 +1,18 @@
 body{
     padding-bottom:105px;
     padding-top:60px;
-    background-color:darkred;
+
 }
 .navbar-fixed-bottom{
-    height:100px;
+    height:50px;
+    padding:2px;
+    background-color: #FFF;
+    opacity: 0.9;
+}
+
+.navbar-fixed-top{
+    background-color:black;
+    opacity: 0.8;
 }
 .thumbnail{
     min-height:350px;
@@ -82,4 +90,48 @@ body{
     border:1px solid #000;
     background-color:white;
     padding:10px;
+}
+
+.btn.main{
+    clear: both;
+    display: block;
+    background-color: white;
+    margin:10px 0px;
+    border:1px solid #CCC;
+    padding:20px 40px;
+}
+.buttonGroup a{
+    padding:8px 12px;
+    margin:5px 0px;
+    border:2px solid #750000;
+    display: block;
+    font-size:large;
+    color:#650000;
+    border-radius:6px;
+    display: inline-block;
+}
+.buttonGroup a:HOVER{
+    color:white;
+
+}
+a.navbar-brand{
+    color:white;
+    font-size:large;
+    padding:10px 0px;
+}
+option:first {
+    color: #999;
+}
+.form-control{
+    margin-top:10px;
+}
+button[type=submit],button[type=button]{
+    margin-top:10px;
+    width:100%;
+}
+
+.eventTitle {
+    text-align: center;
+    font-size: x-large;
+    color: darkred;
 }
