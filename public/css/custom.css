@@ -39,7 +39,7 @@ body{
 
 
 
-// FLYOUT MENU
+/* FLYOUT MENU */
 
    .flyout-menu ul{
        display:block;
@@ -134,4 +134,22 @@ button[type=submit],button[type=button]{
     text-align: center;
     font-size: x-large;
     color: darkred;
+}
+.center-horizontal{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.no-margin{
+    margin:0px !important;
+}
+.no-padding{
+   padding:0px !important;
+}
+.sectionHeader{
+    margin-left:10px;
+    color:orange;
+    border-bottom: 2px solid
 }

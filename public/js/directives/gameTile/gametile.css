@@ -1,0 +1,46 @@
+.gameTile{
+    display: block;
+    width:100%;
+    border-bottom: 1px solid red;
+    padding: 19px 10px;
+    font-size:medium;
+}
+div .gameTile:last-of-type{
+    border:none;
+}
+.gameTile div{
+    display:inline-block;
+    padding:0px 5px;
+}
+.gameTile .buttonGroup{
+    float:right;
+}
+.gameTile .buttonGroup button{
+    padding:8px 8px;
+    border:2px solid #FFF;
+    color:ghostwhite;
+    display: block;
+    font-size:large;
+    border-radius:6px;
+    display: inline-block;
+    background-color:transparent;
+}
+.title{
+    color:ghostwhite;
+}
+.gameTile .lightblue{
+    border-color: lightskyblue !important;
+    color: lightskyblue !important;
+}
+.gameTile .white{
+    border-color: #FFF !important;
+    color: #FFF !important;
+}
+.gameTile .lightgreen{
+    border-color: rgba(183, 234, 68, 0.64) !important;
+    color: rgba(183, 234, 68, 0.64) !important;
+}
+.gameTile .gray{
+    border-color: #666 !important;
+    color: #666 !important;
+}

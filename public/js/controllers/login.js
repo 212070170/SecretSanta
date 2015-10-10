@@ -13,7 +13,7 @@ define(['angular',
         $scope.doLogin = function(){
             $scope.user.username = $scope.username;
             $scope.user.password = $scope.password;
-            $location.path("/home");
+            $location.path("/jogos");
         }
 
 

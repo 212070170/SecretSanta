@@ -17,10 +17,12 @@ define([ 'angular', 'controllers/main', 'angular-ui-router' ], function (angular
 
         var index = check==true?"index.mobile.html":"index.desktop.html";
 
-          /**
+
+            /**
            * Router paths
            * This is where the name of the route is matched to the controller and view template.
            */
+
           $stateProvider
               .state('cadastro', {
                   url: '/cadastro',
@@ -41,35 +43,20 @@ define([ 'angular', 'controllers/main', 'angular-ui-router' ], function (angular
               .state('home', {
                   url: '/home',
                   views: {
-                      headerView: {templateUrl: 'public/views/header.html', controller: 'MainCtrl'},
+                      headerView: {templateUrl: 'public/views/header.loggedin.html', controller: 'MainCtrl' },
                       bodyView: {templateUrl: 'public/views/home.html', controller: 'HomeCtrl'}
 
                   }
               })
-              .state('festa', {
-                  url: '/festa',
+              .state('jogos', {
+                  url: '/jogos',
                   views: {
-                      headerView: {templateUrl: 'public/views/header.html', controller: 'MainCtrl'},
-                      bodyView: {templateUrl: 'public/views/festa.html', controller: 'HomeCtrl'}
+                      headerView: {templateUrl: 'public/views/header.loggedin.html', controller: 'MainCtrl'},
+                      bodyView: {templateUrl: 'public/views/jogos.html', controller: 'JogosCtrl'}
 
                   }
               })
-              .state('participante', {
-                  url: '/participante',
-                  views: {
-                      headerView: {templateUrl: 'public/views/header.html', controller: 'MainCtrl'},
-                      bodyView: {templateUrl: 'public/views/participante.html', controller: 'HomeCtrl'}
 
-                  }
-              })
-              .state('administrador', {
-                  url: '/administrador',
-                  views: {
-                      headerView: {templateUrl: 'public/views/header.html', controller: 'MainCtrl'},
-                      bodyView: {templateUrl: 'public/views/administrador.html', controller: 'HomeCtrl'}
-
-                  }
-              })
           ;
 
         $urlRouterProvider

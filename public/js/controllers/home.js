@@ -9,9 +9,7 @@ define(['angular',
     // Controller definition
     controllers.controller("HomeCtrl", ["$scope", "$rootScope","$location","authenticate", function($scope, $rootScope,$location, Auth) {
         Auth.protect();
-        $scope.escolherFesta = function(){
-        $location.path("participante");
-    }
+
 
     }]);
 });

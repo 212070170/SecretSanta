@@ -2,5 +2,5 @@
 /**
  * I load all angular controller files in controllers directory.
  */
-define(['./home','./login','./cadastro'],
+define(['./home','./login','./cadastro','./jogos'],
     function(){});

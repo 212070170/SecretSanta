@@ -31,13 +31,12 @@ define([
     ]);
 
     myApp.run(['$location', '$rootScope', function($location, $rootScope) {
-   /* this is the app run module*/
+
 
     }]);
 
 
-    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory','user', function($scope,$rootScope,session,User){
-        $scope.user = User;
+    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory', function($scope,$rootScope,session){
         //Global application object
         window.App = $rootScope.App = {
             version: '1.0',

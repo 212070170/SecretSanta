@@ -2,7 +2,8 @@
 define(['angular',
     'directives-module',
     './sample-directive',
-    './slidingPanel/ngSlidingPanel'
+    './slidingPanel/ngSlidingPanel',
+    './gameTile/gameTile'
 ], function() {
 
 });

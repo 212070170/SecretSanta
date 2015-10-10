@@ -1,0 +1,11 @@
+<div class="container-fluid center-horizontal col-xs-12 col-md-9 no-margin no-padding">
+    <h3 class="sectionHeader">Minhas Festas</h3>
+    <div>
+        <game-tile ng-repeat="jogo in jogos | filter:{admin:1} track by $index"></game-tile>
+    </div>
+    <h3 class="sectionHeader">Marcando Presenca</h3>
+    <div>
+        <game-tile ng-repeat="jogo in jogos | filter:{admin:0} track by $index"></game-tile>
+    </div>
+
+</div>
