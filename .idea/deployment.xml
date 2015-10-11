@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="HostgatorAmigoApi">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/api/amigo" local="$PROJECT_DIR$/../SecretSanta_Backend" web="/api/amigo" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myAutoUpload" value="ALWAYS" />
   </component>

@@ -4,18 +4,22 @@ define(['angular', 'services-module'], function(angular, services) {
     /* Services */
     services.value('version', '0.1');
 
-    var auth = function(user,$location) {
+    var auth = function($location) {
+        var user = {};
         var protect = function(){
-            if(user.username != "fabiokpoeira" && user.password != "cinza5713")
+            console.log(this.user);
+            console.log("check: ",(this.user.name || false == false) || (this.user.username || false == false) );
+            if( ((this.user.name || false == false) || (this.user.username || false == false)) == true )
                 $location.path("/login");
         }
 
 
         return {
+            user:user,
             protect:protect
         };
     }
 
-    services.factory('authenticate',['user','$location',auth]);
+    services.factory('authenticate',['$location',auth]);
     return services;
 })

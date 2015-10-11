@@ -7,9 +7,10 @@ define(['angular',
 ], function(angular, controllers) {
 
     // Controller definition
-    controllers.controller("JogosCtrl", ["$scope", "$rootScope","$location","user","authenticate", function($scope, $rootScope,$location,User,Auth) {
-        Auth.protect();
-        $scope.user = User;
+    controllers.controller("JogosCtrl", ["$scope", "$rootScope","$location","authenticate", function($scope, $rootScope,$location,Auth) {
+        $scope.auth = Auth;
+        $scope.auth.protect();
+
 
         $scope.jogos = [
             {

@@ -7,13 +7,20 @@ define(['angular',
 ], function(angular, controllers) {
 
     // Controller definition
-    controllers.controller("LoginCtrl", ["$scope", "$rootScope","$location","user", function($scope, $rootScope,$location,User) {
-        $scope.user = User;
-
+    controllers.controller("LoginCtrl", ["$scope", "$rootScope","$location","data.loader","authenticate", function($scope, $rootScope,$location,dl,Auth) {
+        $scope.auth = Auth;
         $scope.doLogin = function(){
-            $scope.user.username = $scope.username;
-            $scope.user.password = $scope.password;
-            $location.path("/jogos");
+            dl.getLogin($scope.username,$scope.password).success(function(data){
+                $scope.auth.user = data;
+                $location.path("/jogos");
+                console.log("success",$scope.auth.user);
+
+            }).error(function(){
+                $location.path("/login");
+                console.log("error");
+
+            });
+
         }
 
 

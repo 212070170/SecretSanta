@@ -15,6 +15,7 @@ require.config({
         'angular-ui-router': '../components/angular-ui-router/release/angular-ui-router',
         'angular-mocks': '../components/angular-mocks/angular-mocks',
         'bootstrap-3.2.0':'../components/Bootstrap.3.2.0/js/bootstrap.min',
+        'underscore':'../components/underscore/underscore-min',
 
 
         // Named References

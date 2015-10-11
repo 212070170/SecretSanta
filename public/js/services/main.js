@@ -1,3 +1,3 @@
-define(['angular','services-module','./session-factory','./user','./authenticate'],function(){
+define(['angular','services-module','./session-factory','./user','./authenticate','./data.source','./data.loader'],function(){
 
 })
