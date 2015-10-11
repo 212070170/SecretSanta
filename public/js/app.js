@@ -36,8 +36,10 @@ define([
     }]);
 
 
-    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory', function($scope,$rootScope,session){
+    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory','notifier', function($scope,$rootScope,session,notifier){
         //Global application object
+        $rootScope.store = notifier;
+        console.log("notifier",$rootScope.store);
         window.App = $rootScope.App = {
             version: '1.0',
             name: 'Amigo Secreto',

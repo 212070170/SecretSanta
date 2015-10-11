@@ -180,3 +180,22 @@ button[type=submit],button[type=button]{
     -o-transition: max-height 0.5s ease;
 
 }
+.notifications{
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    width:300px;
+    z-index:20000;
+}
+
+.notifications .notification{
+    position:relative;
+}
+.notifications .notification .close{
+    position:absolute;
+    width:30px;
+    height:30px;
+    top:0px;
+    right:0px;
+    display:block;
+}

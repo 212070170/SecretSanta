@@ -5,6 +5,8 @@ define(['angular',
     './slidingPanel/ngSlidingPanel',
     './gameTile/gameTile',
     './ngMobileModal/ngMobileModal',
+    './notifications/notification',
+    './notifications/notifications',
     './ngActionMenu/ngActionMenu'
 ], function() {
 
