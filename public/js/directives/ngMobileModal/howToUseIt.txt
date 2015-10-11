@@ -1,0 +1,2 @@
+        <button id="showModal">Show Modal</button>
+        <ng-mobile-modal id="myMobileModal" triggered-by="#showModal"> My Modal</ng-mobile-modal>

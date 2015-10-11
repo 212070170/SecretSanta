@@ -1,0 +1,69 @@
+.ngMobileModal{
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    background-color:#000;
+    opacity: 0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+    transition: opacity 0.7s ease;
+    -webkit-transition: opacity 0.7s ease;
+    -moz-transition: opacity 0.7s ease;
+    -ms-transition: opacity 0.7s ease;
+    -o-transition: opacity 0.7s ease;
+    visibility: hidden;
+    z-index:10000;
+
+}
+.ngMobileModal.show{
+    visibility: visible;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.closeMobileModal{
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:red;
+    vertical-align:middle;
+    padding:3px;
+    font-weight:bold;
+    position:fixed;
+    right:10px;
+    top:10px;
+    border-radius:4px;
+    border:2px solid red;z-index:10001;
+}
+.ngMobileModal .header, .ngMobileModal .footer, .ngMobileModal .body{
+    width:100%;
+    padding:15px;
+    margin:0px;
+    display:block;
+    clear:both;
+    color:#FFF;
+    font-family:Calibri, Arial;
+}
+.ngMobileModal .inner {
+    height: 100%;
+    overflow-y: auto;
+}
+.ngMobileModal .body{
+    margin-top:70px;
+    overflow-y:auto;
+}
+.ngMobileModal .header{
+    height:70px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    border-bottom:1px solid #333;
+}
+.ngMobileModal .footer{
+    border-top:1px solid #333;
+    height:70px;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+}

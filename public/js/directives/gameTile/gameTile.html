@@ -2,9 +2,9 @@
     <div class="tileIcon"><i class="fa fa-star"></i> </div>
     <div class="title">{{jogo.name}}</div>
     <div class="buttonGroup">
-        <button class="lightblue"><i class="fa fa-users"></i> </button>
-        <button class="lightgreen" ng-show="jogo.played == 1"><i class="fa fa-user"></i> </button>
+        <button class="lightblue allPlayers" ng-click="showAllPlayers()"><i class="fa fa-users"></i> </button>
+        <button class="lightgreen" ng-show="jogo.played == 1" ng-click="showPickedFriend()"><i class="fa fa-user"></i> </button>
         <button class="white" ng-show="jogo.played == 0"><i class="fa fa-gamepad"></i> </button>
-        <button class="gray"><i class="fa fa-recycle"></i> </button>
+        <button class="gray" ng-click="confirmDelete()"><i class="fa fa-recycle" ng-click="confirmDelete()"></i> </button>
     </div>
 </div>

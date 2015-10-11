@@ -1,0 +1,106 @@
+.am{
+    display:block;
+    clear:both;
+    padding:7px 7px 7px 10px;
+    opacity: 0.93;
+    filter: alpha(opacity=93); /* For IE8 and earlier */
+    text-align:center;
+}
+
+.am:hover{
+    text-decoration:none;
+
+}
+.am .fa{
+    font-size:28px;
+    display:inline-block;
+    padding:5px;
+    text-decoration:none;
+}
+.am.amtitle{
+    font-size:12px;
+    padding:10px 0px 10px 0px;
+}
+.light .am.amTitle{
+    color:#555 !important;
+}
+.dark .am.amTitle{
+    color:#CCC !important;
+}
+.am .amlabel{
+    height:32px;
+    padding:5px 0px 10px 10px;;
+    display:inline-block;
+    font-size:18px;
+    vertical-align:top;
+
+}
+
+.am.detach{
+    margin-top:5px;
+    margin-bottom:5px;
+    border-radius:4px;
+}
+
+
+.amMenu > div:nth-of-type(1) .am {
+    border-radius:4px 4px 0px 0px;
+}
+
+.amMenu > div:last-of-type .am{
+    border-radius:0px 0px 4px 4px;
+}
+
+.amContainer{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    bottom:0px;
+    z-index:10000;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.amContainer .amMenu{
+    position:relative;
+    bottom:-500px;
+    width:90%;
+    transition: all 0.3s ease;
+    -webkit-transition: bottom 0.3s ease;
+    -moz-transition: bottom 0.3s ease;
+    -ms-transition: bottom 0.3s ease;
+    -o-transition: bottom 0.3s ease;
+    height:0px;
+
+}
+
+.amContainer .amMenu.showActionPanel{
+    display:block;
+    top:auto;
+    bottom:5px;
+    height:auto;
+
+
+}
+
+.light .am{
+    color:#4985f1;
+    background-color:#DDD;
+    border-bottom:1px solid #999;
+    box-shadow: 1px 1px 2px #666;
+
+}
+.light .am:hover{
+    background-color:#EEE;
+}
+
+.dark .am{
+    color:#4985f1;
+    background-color:#444444;
+    border-bottom:1px solid #222222;
+    box-shadow: 1px 1px 2px #333;
+}
+.dark .am:hover{
+    background-color:#333333 !important;
+}
