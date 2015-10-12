@@ -150,6 +150,7 @@ button[type=submit],button[type=button]{
 }
 .sectionHeader{
     margin-left: 2px;
+    margin-right: 5px;
     color: orange;
     border: 2px solid;
     padding: 5px;
@@ -198,4 +199,61 @@ button[type=submit],button[type=button]{
     top:0px;
     right:0px;
     display:block;
+}
+.deadCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0px !important;
+}
+
+h1.pickname{
+    color:white;
+    padding:10px;
+    border-radius: 10px;
+    border:2px solid white;
+    text-align: center;
+}
+
+.player{
+    border:2px solid white;
+    border-radius:10px;
+    margin:5px;
+}
+
+.player div{
+    display:inline-block;
+    padding:5px;
+}
+.player .playerName{
+    color:white;
+    font-size: x-large;
+}
+.player i{
+    font-size:x-large;
+    color:green;
+}
+.player i.played{
+    color:darkred !important;
+}
+#allPlayers{
+    overflow-y:auto;
+}
+
+.allPlayersTitle{
+    border-bottom:1px solid #666;
+    margin-bottom:10px;
+}
+.allPlayersTitle h2{
+    font-stretch: condensed;
+    margin:5px;
+    color:orange;
+}
+.allPlayersTitle div{
+    display: inline-block;
+    color:white;
+    padding:5px;
 }

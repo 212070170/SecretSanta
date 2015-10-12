@@ -2,15 +2,29 @@
     display: block;
     width:100%;
     border-bottom: 1px solid red;
-    padding: 19px 10px;
+    padding: 19px 10px 19px 0px;
     font-size:medium;
+}
+
+.gametile .fa-star{
+    width:10px;
+    color:darkred;
+    overflow:visible;
+    font-size:23px;
+    padding-top:10px;
 }
 div .gameTile:last-of-type{
     border:none;
 }
-.gameTile div{
+.gameTile > div{
     display:inline-block;
     padding:0px 5px;
+    vertical-align:top;
+}
+.gameTile .subscript{
+    font-size:small;
+    font-stretch: condensed;
+
 }
 .gameTile .buttonGroup{
     float:right;

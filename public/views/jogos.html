@@ -1,21 +1,33 @@
 <div class="container-fluid center-horizontal col-xs-12 col-md-9 no-margin no-padding">
     <h3 class="sectionHeader" ng-show="myGames.length > 0" ng-click="toggleVisibility($event,'myGames')">Minhas Festas <div class="pull-right"><i class="fa fa-chevron-down"></i> </div></h3>
     <div id="myGames" class="gamesList show" ng-show="myGames.length > 0">
-        <game-tile ng-repeat="jogo in myGames = (jogos | filter:{admin:1}) track by $index"></game-tile>
+        <game-tile ng-repeat="jogo in myGames = (dl.getGames() | filter:{admin:1}) track by $index"></game-tile>
     </div>
     <h3 class="sectionHeader" ng-show="notMyGames.length > 0" ng-click="toggleVisibility($event,'notMyGames')" >Marcando Presenca <div class="pull-right"><i class="fa fa-chevron-down"></i> </div></h3>
     <div id="notMyGames" class="gamesList show" ng-show="notMyGames.length > 0">
-        <game-tile ng-repeat="jogo in notMyGames = (jogos | filter:{admin:0}) track by $index"></game-tile>
+        <game-tile ng-repeat="jogo in notMyGames = (dl.getGames() | filter:{admin:0}) track by $index"></game-tile>
     </div>
 
 </div>
 
-<ng-mobile-modal id="allPlayers" triggered-by=".allPlayers"> My Modal</ng-mobile-modal>
+<ng-mobile-modal id="allPlayers" triggered-by=".allPlayers">
+    <div class="allPlayersTitle">
+        <h2>{{dl.getPlayers().name}}</h2>
+        <div>min R${{dl.getPlayers().min}} - max:R${{dl.getPlayers().min}}</div>
+        <div>Data: {{dl.getPlayers().date}}</div>
+    </div>
+    <div class="container center-horizontal col-md-6 col-sm-12 col-xs-12">
+        <div ng-repeat="player in dl.getPlayers().players track by $index" class="allPlayers player">
+            <div><i class="fa fa-user" ng-class="{played:player.played == '1'}"></i></div>
+            <div class="playerName">{{player.usr_name}}</div>
+        </div>
+    </div>
+</ng-mobile-modal>
 <ng-mobile-modal id="pickedFriend" triggered-by=".allPlayers">
-    <h1>My Picked Friend</h1>
+    <h1 class="deadCenter pickname">{{pick_name}}</h1>
 </ng-mobile-modal>
 
 <ng-action-menu id="confirmDelete" class="light" title="Voce deseja excluir e tirar seu nome desse evento?" btn-toggle="deleteBtn">
-    <div icon="" link="" behavior="" color="#4498CC">Sim</div>
-    <div icon="" link="" behavior="" color="red">Nao</div>
+    <div icon="" link="confirmDelete()" behavior="click" color="#4498CC">Sim</div>
+    <div icon="" link="" behavior="click" color="red">Nao</div>
 </ng-action-menu>

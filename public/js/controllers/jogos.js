@@ -7,9 +7,22 @@ define(['angular',
 ], function(angular, controllers) {
 
     // Controller definition
-    controllers.controller("JogosCtrl", ["$scope", "$rootScope","$location","authenticate", function($scope, $rootScope,$location,Auth) {
+    controllers.controller("JogosCtrl", ["$scope", "$rootScope","$location","authenticate","data.loader","notifier", function($scope, $rootScope,$location,Auth,dataloader,notifier) {
         $scope.auth = Auth;
+        $scope.dl = dataloader;
         $scope.auth.protect();
+
+        //enable spinner
+        if($scope.dl.getGames().length == 0)
+            $scope.dl.loadGames($scope.auth.user.id).success(function(data){
+                //hide spinner
+                $scope.dl.setGames(data);
+                console.log($scope.dl.games);
+            }).error(function(){
+                // hide spinner
+                // show error
+
+            })
 
 
         $scope.jogos = [
@@ -57,6 +70,18 @@ define(['angular',
             list.toggleClass('show');
             list.toggleClass('hide');
 
+        }
+
+        $scope.confirmDelete = function(){
+            $scope.dl.leaveGame($scope.auth.user.id,$scope.to_delete,$scope.event_in_focus).success(function(data){
+                $scope.dl.setGames(data);
+                notifier.success("Voce foi excluido com sucesso");
+
+            }).error(function(){
+                notifier.error("Nao foi possivel excluir te deste jogo nesse momento");
+            })
+
+            console.log("ConfirmDelete",$scope.to_delete);
         }
     }]);
 });

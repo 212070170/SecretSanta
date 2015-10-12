@@ -39,13 +39,15 @@ define(['angular', 'directives-module'], function(angular, directives) {
                                 buildLink = "href='"+link+"'";
                             }else if(bhvr == "modal"){
                                 buildLink = 'data-toggle="modal" href="'+link+'" ';
-
-                                //$(this).modal();
                             }
 
                             var foreColor = $(this).attr("color") != "" && $(this).attr("color") != undefined && $(this).attr("color") != null ? "color:"+$(this).attr("color")+";" : "";
-
                             var inner = "<a "+buildLink+" class='am "+type+" dismissActionMenu' style='"+foreColor+""+bkg+"'><i class='fa fa-"+icon+"'></i><span class='amlabel'>"+text+"</span></a>";
+
+                            if(bhvr == "click"){
+                             inner = "<div class='am "+type+" dismissActionMenu' ng-click='"+link+"' style='"+foreColor+""+bkg+"'><i class='fa fa-"+icon+"'></i><span class='amlabel'>"+text+"</span></div>";
+                            }
+
                             $(this).html(inner);;
                         });
 
@@ -56,11 +58,16 @@ define(['angular', 'directives-module'], function(angular, directives) {
 
                         if(btnToggle != null && btnToggle != undefined && btnToggle != ""){
                             $(btnToggle).click(function(){
-                                $("#"+id+" .amMenu").toggleClass("showActionPanel");
+                                    $("#"+id+" .amMenu").toggleClass("showActionPanel");
                             });
                             $(".dismissActionMenu").click(function(){
+                                var clickCall = $(this).attr("ng-click");
                                 $("#"+id+" .amMenu").toggleClass("showActionPanel");
-                            })
+                                if(clickCall != undefined){
+                                    //calls the function on the parent scope
+                                    $scope.$eval(clickCall);
+                                }
+                            });
                         }
 
                         $scope.$on('$destroy', function () {
