@@ -10,22 +10,48 @@
 
 </div>
 
+<ng-mobile-modal id="addGameForm" triggered-by="#addAGame">
+ <form class="form-horizontal" action="">
+   <div class="header allPlayersTitle">
+        <h2>Criar um evento</h2>
+    </div>
+    <div class="body">
+        <div class="form-group col-xs-12 col-sm-6">
+            <input type="text" ng-model="newEvt.evtName" class="form-control" placeholder="Nome do Evento"/>
+            <input type="text" ng-model="newEvt.evtDate" class="form-control" placeholder="Data do Evento"/>
+            <input type="text" ng-model="newEvt.evtDollarMin" class="form-control" placeholder="Valor Minimo"/>
+            <input type="text" ng-model="newEvt.evtDollarMax" class="form-control" placeholder="Valor Maximo"/>
+            <textarea type="text" ng-model="newEvt.evtDetails" class="form-control" placeholder="Detalhes"></textarea>
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <button class="btn btn-success pull-right" ng-click="createGame()">Criar</button>
+        <button class="btn btn-danger pull-right dismissModal" >Cancelar</button>
+    </div>
+ </form>
+</ng-mobile-modal>
+
 <ng-mobile-modal id="allPlayers" triggered-by=".allPlayers">
     <div class="allPlayersTitle">
         <h2>{{dl.getPlayers().name}}</h2>
         <div>min R${{dl.getPlayers().min}} - max:R${{dl.getPlayers().min}}</div>
-        <div>Data: {{dl.getPlayers().date}}</div>
+        <div>Data: {{dl.getPlayers().date | date:'dd/MM/yy'}}</div>
     </div>
     <div class="container center-horizontal col-md-6 col-sm-12 col-xs-12">
         <div ng-repeat="player in dl.getPlayers().players track by $index" class="allPlayers player">
             <div><i class="fa fa-user" ng-class="{played:player.played == '1'}"></i></div>
             <div class="playerName">{{player.usr_name}}</div>
+            <div class="pull-right deleteUser" ng-show="auth.user.id == dl.getPlayers().admin_id && player.user_id != auth.user.id"><i class="fa fa-times"></i></div>
         </div>
     </div>
 </ng-mobile-modal>
+
 <ng-mobile-modal id="pickedFriend" triggered-by=".allPlayers">
     <h1 class="deadCenter pickname">{{pick_name}}</h1>
 </ng-mobile-modal>
+
 
 <ng-action-menu id="confirmDelete" class="light" title="Voce deseja excluir e tirar seu nome desse evento?" btn-toggle="deleteBtn">
     <div icon="" link="confirmDelete()" behavior="click" color="#4498CC">Sim</div>

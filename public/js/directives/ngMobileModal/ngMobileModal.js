@@ -24,7 +24,7 @@ define(['angular', 'directives-module'], function(angular, directives) {
                     var trigger = attr.triggeredBy;
 
                     return function ($scope, $element, $attr) {
-                         $(".closeMobileModal").click(function(){
+                         $(".closeMobileModal,.dismissModal").click(function(){
                              $(".ngMobileModal").removeClass("show");
                          });
                         $(trigger).click(function(){

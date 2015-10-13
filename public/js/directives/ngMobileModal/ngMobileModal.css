@@ -52,6 +52,7 @@
 .ngMobileModal .body{
     margin-top:70px;
     overflow-y:auto;
+    margin-bottom:70px;
 }
 .ngMobileModal .header{
     height:70px;
@@ -67,3 +68,7 @@
     bottom:0px;
     left:0px;
 }
+.ngMobileModal .footer .btn{
+    margin:0px 2px;
+}
+

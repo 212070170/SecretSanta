@@ -100,7 +100,7 @@ body{
     border:1px solid #CCC;
     padding:20px 40px;
 }
-.buttonGroup a{
+.buttonGroup a, .buttonGroup > div{
     padding:8px 12px;
     margin:5px 0px;
     border:2px solid #750000;
@@ -255,5 +255,14 @@ h1.pickname{
 .allPlayersTitle div{
     display: inline-block;
     color:white;
+    padding:5px;
+}
+.form-group.col-xs-12,.form-group.col-sm-6{
+    margin:0px;
+}
+
+.deleteUser i{
+    color:red;
+    font-size:x-large;
     padding:5px;
 }

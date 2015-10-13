@@ -28,6 +28,8 @@ div .gameTile:last-of-type{
 }
 .gameTile .buttonGroup{
     float:right;
+    margin:0px;
+    padding:0px;
 }
 .gameTile .buttonGroup button{
     padding:8px 8px;

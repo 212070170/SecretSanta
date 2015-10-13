@@ -1,3 +1,3 @@
-define(['angular','filters-module'],function(){
+define(['angular','filters-module','./trimmer'],function(){
 
 })

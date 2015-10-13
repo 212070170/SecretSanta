@@ -4,6 +4,7 @@
 define(['angular',
     'controllers-module',
 
+
 ], function(angular, controllers) {
 
     // Controller definition
@@ -11,6 +12,7 @@ define(['angular',
         $scope.auth = Auth;
         $scope.dl = dataloader;
         $scope.auth.protect();
+        $scope.newEvt = {};
 
         //enable spinner
         if($scope.dl.getGames().length == 0)
@@ -73,7 +75,7 @@ define(['angular',
         }
 
         $scope.confirmDelete = function(){
-            $scope.dl.leaveGame($scope.auth.user.id,$scope.to_delete,$scope.event_in_focus).success(function(data){
+                $scope.dl.leaveGame($scope.auth.user.id,$scope.to_delete,$scope.event_in_focus).success(function(data){
                 $scope.dl.setGames(data);
                 notifier.success("Voce foi excluido com sucesso");
 
@@ -82,6 +84,16 @@ define(['angular',
             })
 
             console.log("ConfirmDelete",$scope.to_delete);
+        }
+
+        $scope.createGame = function(){
+            $scope.dl.createGame($scope.auth.user.id,$scope.newEvt.evtName,$scope.newEvt.evtDollarMin,$scope.newEvt.evtDollarMax,$scope.newEvt.evtDate,$scope.newEvt.evtDetails).success(function(data){
+            $(".ngMobileModal").removeClass("show");
+            $scope.newEvt = {};
+            $scope.dl.setGames(data);
+            }).error(function(){
+                notifier.error("Nao foi possivel criar seu evento. Tente novamente mais tarde");
+            });
         }
     }]);
 });
