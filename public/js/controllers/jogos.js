@@ -13,6 +13,7 @@ define(['angular',
         $scope.dl = dataloader;
         $scope.auth.protect();
         $scope.newEvt = {};
+        $scope.game = {};
 
         //enable spinner
         if($scope.dl.getGames().length == 0)
@@ -26,43 +27,6 @@ define(['angular',
 
             })
 
-
-        $scope.jogos = [
-            {
-                id:1,
-                name:"Festa da Sueli",
-                date:"25/12/2015",
-                admin:0,
-                played:1,
-                friend:"Andre Reis"
-            },
-            {
-                id:2,
-                name:"Festa da Maria",
-                date:"25/12/2015",
-                admin:0,
-                played:0,
-                friend:""
-            },
-            {
-                id:3,
-                name:"Festa do Fabio",
-                date:"25/12/2015",
-                admin:1,
-                played:1,
-                friend:"Peter Parker"
-            },
-            {
-                id:4,
-                name:"Festa da Globo",
-                date:"25/12/2015",
-                admin:0,
-                played:1,
-                friend:"Guilherme de Padua"
-            },
-        ]
-
-
         $scope.toggleVisibility = function(e,id){
             var $element = e.target;
             var chevron  = $($element).find('div i');
@@ -75,7 +39,7 @@ define(['angular',
         }
 
         $scope.confirmDelete = function(){
-                $scope.dl.leaveGame($scope.auth.user.id,$scope.to_delete,$scope.event_in_focus).success(function(data){
+                $scope.dl.leaveGame($scope.auth.user.id,$scope.to_delete,$scope.game.event_in_focus).success(function(data){
                 $scope.dl.setGames(data);
                 notifier.success("Voce foi excluido com sucesso");
 
@@ -93,6 +57,15 @@ define(['angular',
             $scope.dl.setGames(data);
             }).error(function(){
                 notifier.error("Nao foi possivel criar seu evento. Tente novamente mais tarde");
+            });
+        }
+
+        $scope.addPlayer = function(){
+            console.log($scope.game.userToAdd,$scope.dl.getPlayers().event_id);
+            $scope.dl.addPlayer($scope.game.userToAdd,$scope.dl.getPlayers().event_id).success(function(data){
+            $scope.dl.setGames(data);
+            }).error(function(){
+                notifier.error("Nao foi possivel adicionar essa pessoa");
             });
         }
     }]);

@@ -39,7 +39,11 @@
         <div>min R${{dl.getPlayers().min}} - max:R${{dl.getPlayers().min}}</div>
         <div>Data: {{dl.getPlayers().date | date:'dd/MM/yy'}}</div>
     </div>
+
     <div class="container center-horizontal col-md-6 col-sm-12 col-xs-12">
+        <div ng-if="auth.user.id == dl.getPlayers().admin_id" class="col-sm-6 col-xs-12">
+            <input class="form-control" ng-model="game.userToAdd"><button class="btn btn-info" ng-click="addPlayer()"><i class="fa fa-plus"></i></button>
+        </div>
         <div ng-repeat="player in dl.getPlayers().players track by $index" class="allPlayers player">
             <div><i class="fa fa-user" ng-class="{played:player.played == '1'}"></i></div>
             <div class="playerName">{{player.usr_name}}</div>

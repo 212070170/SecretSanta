@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Hostgator">
+  <component name="PublishConfigData" autoUpload="Always">
     <serverData>
-      <paths name="Hostgator">
+      <paths name="HOSTGATOR">
         <serverdata>
           <mappings>
-            <mapping deploy="/AmigoSecreto" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="HostgatorAmigoApi">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/api/amigo" local="$PROJECT_DIR$/../SecretSanta_Backend" web="/api/amigo" />
+            <mapping deploy="/AmigoSecreto" local="$PROJECT_DIR$" web="/AmigoSecreto" />
           </mappings>
         </serverdata>
       </paths>

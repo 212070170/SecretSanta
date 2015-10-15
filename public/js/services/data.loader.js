@@ -9,14 +9,21 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
         //Holding variables
         var games = [];
         var players = [];
+        var gameInFocus = undefined;
+
 
 		var ds = {
 			login: DS(baseURL+'login/?apiKey='+apiKey+'&:uname&:pw'),
 			leavegame: DS(baseURL+'leave/?apiKey='+apiKey+'&:uid&:eid&:jid'),
 			allPlayers: DS(baseURL+'allPlayers/?apiKey='+apiKey+'&:eid'),
 			getGames: DS(baseURL+'myEvents/?apiKey='+apiKey+'&:uid'),
-			createGame: DS(baseURL+'createEvent/?apiKey='+apiKey+'&:uid&:evtName&:evtDollarMin&:evtDollarMax&:evtDate&:evtDetails')
+			createGame: DS(baseURL+'createEvent/?apiKey='+apiKey+'&:uid&:evtName&:evtDollarMin&:evtDollarMax&:evtDate&:evtDetails'),
+			addPlayer: DS(baseURL+'assocPlayer/?apiKey='+apiKey+'&:user&:game')
 		};
+
+        var setGameInfocus = function(id){
+            this.gameInFocus = id;
+        }
 
 
 		var getLogin = function(un,passw) {
@@ -46,6 +53,10 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
 
         var createGame = function(uid,evtName,evtDollarMin,evtDollarMax,evtDate,evtDetails){
             return ds.createGame.get({uid:uid,evtName:evtName,evtDollarMin:evtDollarMin,evtDollarMax:evtDollarMax,evtDate:evtDate,evtDetails:evtDetails});
+
+        }
+        var addPlayer = function(user,game){
+            return ds.addPlayer.get({user:user,game:game});
 
         }
 		// This is done in order to seperate the actual calling of the service from the
@@ -80,6 +91,7 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             getPlayers:getPlayers,
             leaveGame:leaveGame,
             createGame:createGame,
+            addPlayer:addPlayer,
 			input: input
 		};
 	};
