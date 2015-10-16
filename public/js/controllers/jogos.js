@@ -47,7 +47,17 @@ define(['angular',
                 notifier.error("Nao foi possivel excluir te deste jogo nesse momento");
             })
 
-            console.log("ConfirmDelete",$scope.to_delete);
+        }
+
+        $scope.deletePlayer = function(uid,jid,eid){
+            $scope.dl.deletePlayer(uid,jid,eid)
+                .success(function(data){
+                    $scope.dl.setPlayers(data);
+                    notifier.success("Voce foi excluido com sucesso");
+
+                }).error(function() {
+                    notifier.error("Nao foi possivel remover esse jogador");
+                });
         }
 
         $scope.createGame = function(){
@@ -63,7 +73,8 @@ define(['angular',
         $scope.addPlayer = function(){
             console.log($scope.game.userToAdd,$scope.dl.getPlayers().event_id);
             $scope.dl.addPlayer($scope.game.userToAdd,$scope.dl.getPlayers().event_id).success(function(data){
-            $scope.dl.setGames(data);
+            $scope.game.userToAdd = "";
+            $scope.dl.setPlayers(data);
             }).error(function(){
                 notifier.error("Nao foi possivel adicionar essa pessoa");
             });

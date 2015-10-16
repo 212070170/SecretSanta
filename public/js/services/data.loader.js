@@ -18,7 +18,8 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
 			allPlayers: DS(baseURL+'allPlayers/?apiKey='+apiKey+'&:eid'),
 			getGames: DS(baseURL+'myEvents/?apiKey='+apiKey+'&:uid'),
 			createGame: DS(baseURL+'createEvent/?apiKey='+apiKey+'&:uid&:evtName&:evtDollarMin&:evtDollarMax&:evtDate&:evtDetails'),
-			addPlayer: DS(baseURL+'assocPlayer/?apiKey='+apiKey+'&:user&:game')
+			addPlayer: DS(baseURL+'assocPlayer/?apiKey='+apiKey+'&:user&:eid'),
+            deletePlayer: DS(baseURL+'deletePlayer/?apiKey='+apiKey+'&:uid&:eid&:jid')
 		};
 
         var setGameInfocus = function(id){
@@ -38,6 +39,9 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
         var leaveGame = function(uid,jid,eid){
             return ds.leavegame.get({uid:uid,jid:jid,eid:eid});
         }
+        var deletePlayer = function(uid,jid,eid){
+            return ds.deletePlayer.get({uid:uid,jid:jid,eid:eid});
+        }
         var getGames = function(){
             return this.games;
         }
@@ -55,8 +59,8 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             return ds.createGame.get({uid:uid,evtName:evtName,evtDollarMin:evtDollarMin,evtDollarMax:evtDollarMax,evtDate:evtDate,evtDetails:evtDetails});
 
         }
-        var addPlayer = function(user,game){
-            return ds.addPlayer.get({user:user,game:game});
+        var addPlayer = function(user,eid){
+            return ds.addPlayer.get({user:user,eid:eid});
 
         }
 		// This is done in order to seperate the actual calling of the service from the
@@ -92,6 +96,7 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             leaveGame:leaveGame,
             createGame:createGame,
             addPlayer:addPlayer,
+            deletePlayer:deletePlayer,
 			input: input
 		};
 	};
