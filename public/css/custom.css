@@ -1,8 +1,14 @@
 body{
     padding-bottom:105px;
     padding-top:60px;
+    background-image: url('../images/bkg-min.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-attachment: fixed;
+    background-size: cover;
 
 }
+
 .navbar-fixed-bottom{
     height:50px;
     padding:2px;

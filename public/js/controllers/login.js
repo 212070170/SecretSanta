@@ -11,10 +11,9 @@ define(['angular',
         $scope.auth = Auth;
         $scope.doLogin = function(){
             dl.getLogin($scope.username,$scope.password).success(function(data){
+                $scope.auth.user.set(data);
                 notifier.clearAll();
-                $scope.auth.user = data;
                 $location.path("/jogos");
-                console.log("success",$scope.auth.user);
                 notifier.info("Usuario e/ou senha incorretos");
 
 

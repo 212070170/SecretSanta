@@ -36,7 +36,8 @@ define([
     }]);
 
 
-    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory','notifier', function($scope,$rootScope,session,notifier){
+    myApp.controller('MainCtrl',['$scope','$rootScope','Session_factory','notifier','authenticate', function($scope,$rootScope,session,notifier,authenticate){
+        $scope.auth = authenticate;
         //Global application object
         $rootScope.store = notifier;
         console.log("notifier",$rootScope.store);
@@ -57,10 +58,10 @@ define([
             //vRuntime.binder.unbindAll();
         });
 
-        $rootScope.logout = function (event) {
-            event.preventDefault();
-            location.replace('logout');
-        };
+        $scope.logout = function(){
+            $scope.auth.user.destroy();
+            $scope.auth.protect();
+        }
 
 
 

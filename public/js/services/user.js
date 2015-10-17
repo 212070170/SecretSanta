@@ -24,6 +24,7 @@ define(['angular', 'services-module'], function(angular, services) {
             })
 
         }
+
         return user;
     }]);
     return services;
