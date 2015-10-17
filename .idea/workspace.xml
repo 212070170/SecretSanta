@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba19d02-e0ba-4e85-9924-859af8ad1232" name="Default" comment="testing commit 001">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/cadastro.html" afterPath="$PROJECT_DIR$/public/views/cadastro.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/cadastro.js" afterPath="$PROJECT_DIR$/public/js/controllers/cadastro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/services/data.loader.js" afterPath="$PROJECT_DIR$/public/js/services/data.loader.js" />
     </list>
     <ignored path="Basic_Angular_Bootstrap_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.loader.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="data.loader.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/services/data.loader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10600707" vertical-offset="405" max-vertical-offset="1890">
+            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1890">
               <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
               <folding />
             </state>
@@ -67,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cadastro.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="cadastro.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/controllers/cadastro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="9" column="162" selection-start-line="9" selection-start-column="162" selection-end-line="9" selection-end-column="162" />
+            <state vertical-scroll-proportion="0.5300353" vertical-offset="0" max-vertical-offset="566">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -186,9 +184,9 @@
         <option value="$PROJECT_DIR$/public/js/controllers/jogos.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/js/services/authenticate.js" />
-        <option value="$PROJECT_DIR$/public/js/controllers/cadastro.js" />
         <option value="$PROJECT_DIR$/public/views/cadastro.html" />
         <option value="$PROJECT_DIR$/public/js/services/data.loader.js" />
+        <option value="$PROJECT_DIR$/public/js/controllers/cadastro.js" />
       </list>
     </option>
   </component>
@@ -618,7 +616,7 @@
       <workItem from="1444263773523" duration="96549000" />
       <workItem from="1444868045055" duration="5435000" />
       <workItem from="1444950782239" duration="6995000" />
-      <workItem from="1445043035264" duration="8225000" />
+      <workItem from="1445043035264" duration="8476000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1430001844528</created>
@@ -652,7 +650,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131216000" />
+    <option name="totallyTimeSpent" value="131467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
@@ -1057,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/services/authenticate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="840">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1125">
@@ -1081,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/cadastro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="9" column="162" selection-start-line="9" selection-start-column="162" selection-end-line="9" selection-end-column="162" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="330">
@@ -1099,8 +1081,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/services/data.loader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10600707" vertical-offset="405" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1890">
           <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/services/authenticate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="840">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/cadastro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5300353" vertical-offset="0" max-vertical-offset="566">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding />
         </state>
       </provider>

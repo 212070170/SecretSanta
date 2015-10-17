@@ -18,6 +18,9 @@ define(['angular',
                 else
                     notifier.success(data.message);
 
+                $scope.user = {};
+                $location.path("/login");
+
             }).error(function(){
                     notifier.error("Nao foi possivel cadastra-lo devido a um erro no sistema");
             })
