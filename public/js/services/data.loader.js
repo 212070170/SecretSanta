@@ -19,6 +19,7 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
 			getGames: DS(baseURL+'myEvents/?apiKey='+apiKey+'&:uid'),
 			createGame: DS(baseURL+'createEvent/?apiKey='+apiKey+'&:uid&:evtName&:evtDollarMin&:evtDollarMax&:evtDate&:evtDetails'),
 			addPlayer: DS(baseURL+'assocPlayer/?apiKey='+apiKey+'&:user&:eid'),
+			register: DS(baseURL+'registerUser/?apiKey='+apiKey+'&:name&:tel&:password&:username&:email'),
             deletePlayer: DS(baseURL+'deletePlayer/?apiKey='+apiKey+'&:uid&:eid&:jid')
 		};
 
@@ -27,6 +28,9 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
         }
 
 
+		var register = function(name,tel,password,username,email) {
+            return ds.register.get({name:name,tel:tel,password:password,username:username,email:email});
+        };
 		var getLogin = function(un,passw) {
             return ds.login.get({uname:un,pw:passw});
         };
@@ -97,6 +101,7 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             createGame:createGame,
             addPlayer:addPlayer,
             deletePlayer:deletePlayer,
+            register:register,
 			input: input
 		};
 	};

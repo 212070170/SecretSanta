@@ -7,12 +7,20 @@ define(['angular',
 ], function(angular, controllers) {
 
     // Controller definition
-    controllers.controller("RegisterCtrl", ["$scope", "$rootScope","$location", function($scope, $rootScope,$location) {
+    controllers.controller("RegisterCtrl", ["$scope", "$rootScope","$location","data.loader",'notifier', function($scope, $rootScope,$location,dataloader,notifier) {
+        $scope.dl = dataloader;
         $scope.doRegister = function(){
-            console.log("Create Registration");
-            console.log("On Success : Go back to login");
-            console.log("On Error : Display Message and Stay on Page");
-            console.log($scope.user);
+            var user = $scope.user;
+            $scope.dl.register(user.name,user.tel,user.pw1,user.username,user.email1).success(function(data){
+                console.log(data);
+                if(data.status == 'error')
+                    notifier.error(data.message);
+                else
+                    notifier.success(data.message);
+
+            }).error(function(){
+                    notifier.error("Nao foi possivel cadastra-lo devido a um erro no sistema");
+            })
         }
 
     }]);
