@@ -56,18 +56,24 @@ define(['angular',
             $scope.dl.deletePlayer(uid,jid,eid)
                 .success(function(data){
                     $scope.dl.setPlayers(data);
-                    notifier.success("Voce foi excluido com sucesso");
+                    notifier.success("Participante excluido com sucesso");
 
                 }).error(function() {
-                    notifier.error("Nao foi possivel remover esse jogador");
+                    notifier.error("Nao foi possivel remover esse participante");
                 });
         }
 
         $scope.createGame = function(){
             $scope.dl.createGame($scope.auth.user.id,$scope.newEvt.evtName,$scope.newEvt.evtDollarMin,$scope.newEvt.evtDollarMax,$scope.newEvt.evtDate,$scope.newEvt.evtDetails).success(function(data){
-            $(".ngMobileModal").removeClass("show");
-            $scope.newEvt = {};
-            $scope.dl.setGames(data);
+                if(data.status == "success"){
+                    $(".ngMobileModal").removeClass("show");
+                    $scope.newEvt = {};
+                    notifier.success(data.message);
+                }else{
+                    notifier.error(data.message);
+                }
+
+            $scope.dl.setGames(data.data);
             }).error(function(){
                 notifier.error("Nao foi possivel criar seu evento. Tente novamente mais tarde");
             });
@@ -90,7 +96,18 @@ define(['angular',
         }
 
         $scope.saveChanges = function(){
-
+            $scope.dl.saveChanges($scope.auth.user).success(function(data){
+                if(data.status == "success"){
+                    notifier.success(data.message);
+                    $(".slidingPanel").removeClass("slide-away");
+                    $scope.form.myInfoForm.$setPristine();
+                }else{
+                    notifier.error(data.message);
+                }
+            }).error(function(data){
+                notifier.error("Nao foi possivel conectar com o banco de dados");
+            });
         }
+
     }]);
 });

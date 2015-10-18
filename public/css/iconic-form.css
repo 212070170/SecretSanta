@@ -17,21 +17,21 @@
     font-size:25px;
 
 }
-.iconic-form .iconic-input input{
+.iconic-form .iconic-input input,.iconic-form .iconic-input textarea{
     z-index:999;
     padding-left: 35px;
     background-color:transparent;
     border:2px solid #EEE;
     color:lightblue;
 }
-.iconic-form .iconic-input input.ng-dirty{
+.iconic-form .iconic-input input.ng-dirty,.iconic-form .iconic-input textarea.ng-dirty{
     border-color:olive;
     color:olive;
 }
-.iconic-form .iconic-input i, .iconic-form .iconic-input input{
+.iconic-form .iconic-input i, .iconic-form .iconic-input input,.iconic-form .iconic-input textarea{
     position:absolute;
 }
 .iconic-form > .btn{
     float:right;
-    margin:10px 5px;
+    margin:20px 5px;
 }

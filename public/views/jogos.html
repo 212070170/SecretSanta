@@ -3,7 +3,7 @@
     <div id="myGames" class="gamesList show" ng-show="myGames.length > 0">
         <game-tile ng-repeat="jogo in myGames = (dl.getGames() | filter:{admin:1}) track by $index"></game-tile>
     </div>
-    <h3 class="sectionHeader" ng-show="notMyGames.length > 0" ng-click="toggleVisibility($event,'notMyGames')" >Marcando Presenca <div class="pull-right"><i class="fa fa-chevron-down"></i> </div></h3>
+    <h3 class="sectionHeader" ng-show="notMyGames.length > 0" ng-click="toggleVisibility($event,'notMyGames')" >Outras Festas <div class="pull-right"><i class="fa fa-chevron-down"></i> </div></h3>
     <div id="notMyGames" class="gamesList show" ng-show="notMyGames.length > 0">
         <game-tile ng-repeat="jogo in notMyGames = (dl.getGames() | filter:{admin:0}) track by $index"></game-tile>
     </div>
@@ -38,10 +38,11 @@
         <h2>{{dl.getPlayers().name}}</h2>
         <div>min R${{dl.getPlayers().min}} - max:R${{dl.getPlayers().max}}</div>
         <div>Data: {{dl.getPlayers().date | date:'dd/MM/yy'}}</div>
+        <div>{{dl.getPlayers().details}}</div>
     </div>
 
     <div ng-if="auth.user.id == dl.getPlayers().admin_id" class="col-sm-6 col-xs-12 addPlayerToGame">
-        <input class="form-control" ng-model="game.userToAdd"><button class="btn btn-info" ng-click="addPlayer()"><i class="fa fa-plus"></i></button>
+        <input class="form-control" ng-model="game.userToAdd"><button class="btn btn-info" ng-click="addPlayer()"><i class="fa fa-user-plus"></i></button>
     </div>
 
     <div class="container center-horizontal col-md-6 col-sm-12 col-xs-12">
@@ -54,7 +55,11 @@
 </ng-mobile-modal>
 
 <ng-mobile-modal id="pickedFriend" triggered-by=".allPlayers">
-    <h1 class="deadCenter pickname">{{pick_name}}</h1>
+    <div class="deadCenter pickname">
+        <h1>{{pick_name}}</h1>
+        <h5>{{pick_message}}</h5>
+
+    </div>
 </ng-mobile-modal>
 
     <ng-sliding-panel from="left" behavior="overlap" button-open="userSettings" id="usersettingsLeftPanel" style="visibility: hidden;">
@@ -76,13 +81,14 @@
                 <i class="fa fa-envelope"></i>
                 <input type="text" class="form-control" ng-model="auth.user.email"/>
             </div>
+
             <div class="iconic-input">
                 <i class="fa fa-asterisk"></i>
-                <input type="text" class="form-control" ng-model="auth.user.password_old" placeholder="Digite sua Senha atual"/>
+                <input type="text" class="form-control" ng-model="auth.user.password_new" placeholder="Trocar Senha? Nova Senha"/>
             </div>
             <div class="iconic-input">
-                <i class="fa fa-asterisk"></i>
-                <input type="text" class="form-control" ng-model="auth.user.password_new" placeholder="Trocar Senha? Senha nova"/>
+                <i class="fa fa-list"></i>
+                <textarea type="text" class="form-control" ng-model="auth.user.comment" placeholder="Informacoes sobre o presente que eu gostaria de ganhar"></textarea>
             </div>
             <button class="btn btn-danger" ng-click="cancelChanges()">Cancelar</button>
             <button class="btn btn-success" ng-click="saveChanges()">Salvar</button>
@@ -93,3 +99,5 @@
     <div icon="" link="confirmDelete()" behavior="click" color="#4498CC">Sim</div>
     <div icon="" link="" behavior="click" color="red">Nao</div>
 </ng-action-menu>
+
+<notifications store="store"></notifications>

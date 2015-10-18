@@ -6,8 +6,8 @@
     </div>
     <div class="buttonGroup">
         <button class="lightblue allPlayers" ng-click="showAllPlayers(jogo.event_id)"><i class="fa fa-users"></i> </button>
-        <button class="lightgreen pickedFriend" ng-show="jogo.played == 1" ng-click="showPickedFriend(jogo.pick_name)"><i class="fa fa-user"></i> </button>
-        <button class="white" ng-show="jogo.played == 0" ng-click="pickASecretSanta(jogo.id)"><i class="fa fa-gamepad"></i> </button>
+        <button class="lightgreen pickedFriend" ng-show="jogo.played == 1" ng-click="showPickedFriend(jogo.pick_name,jogo.pick_message)"><i class="fa fa-user"></i> </button>
+        <button class="white" ng-show="jogo.played == 0" ng-click="pickAPlayer(jogo.event_id,auth.user.id)"><i class="fa fa-ticket"></i> </button>
         <button class="gray" ng-click="confirmDelete(jogo.id,jogo.event_id)"><i class="fa fa-recycle" ng-click="confirmDelete()"></i> </button>
     </div>
 </div>

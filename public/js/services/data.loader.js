@@ -16,10 +16,12 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
 			login: DS(baseURL+'login/?apiKey='+apiKey+'&:uname&:pw'),
 			leavegame: DS(baseURL+'leave/?apiKey='+apiKey+'&:uid&:eid&:jid'),
 			allPlayers: DS(baseURL+'allPlayers/?apiKey='+apiKey+'&:eid'),
+			pickAPlayer: DS(baseURL+'pickAPlayer/?apiKey='+apiKey+'&:eid&:uid'),
 			getGames: DS(baseURL+'myEvents/?apiKey='+apiKey+'&:uid'),
 			createGame: DS(baseURL+'createEvent/?apiKey='+apiKey+'&:uid&:evtName&:evtDollarMin&:evtDollarMax&:evtDate&:evtDetails'),
 			addPlayer: DS(baseURL+'assocPlayer/?apiKey='+apiKey+'&:user&:eid'),
 			register: DS(baseURL+'registerUser/?apiKey='+apiKey+'&:name&:tel&:password&:username&:email'),
+			saveChanges: DS(baseURL+'saveChanges/?apiKey='+apiKey+'&:id&:name&:tel&:password&:username&:email&:comment'),
             deletePlayer: DS(baseURL+'deletePlayer/?apiKey='+apiKey+'&:uid&:eid&:jid')
 		};
 
@@ -30,6 +32,9 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
 
 		var register = function(name,tel,password,username,email) {
             return ds.register.get({name:name,tel:tel,password:password,username:username,email:email});
+        };
+		var saveChanges = function(user) {
+            return ds.saveChanges.get({id:user.id,name:user.name,tel:user.tel,password:user.password_new,username:user.username,email:user.email,comment:user.comment});
         };
 		var getLogin = function(un,passw) {
             return ds.login.get({uname:un,pw:passw});
@@ -45,6 +50,9 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
         }
         var deletePlayer = function(uid,jid,eid){
             return ds.deletePlayer.get({uid:uid,jid:jid,eid:eid});
+        }
+        var pickAPlayer = function(eid,uid){
+            return ds.pickAPlayer.get({eid:eid,uid:uid});
         }
         var getGames = function(){
             return this.games;
@@ -67,6 +75,7 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             return ds.addPlayer.get({user:user,eid:eid});
 
         }
+
 		// This is done in order to seperate the actual calling of the service from the
 		// generating of input because events for both maybe different.
 		// @overloaded method.
@@ -102,6 +111,8 @@ define(['angular', 'services-module', 'underscore'], function (angular, services
             addPlayer:addPlayer,
             deletePlayer:deletePlayer,
             register:register,
+            saveChanges:saveChanges,
+            pickAPlayer:pickAPlayer,
 			input: input
 		};
 	};

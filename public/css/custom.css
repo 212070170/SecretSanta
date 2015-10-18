@@ -6,6 +6,7 @@ body{
     background-position: right;
     background-attachment: fixed;
     background-size: cover;
+    color:#AAA;
 
 }
 
@@ -109,10 +110,10 @@ body{
 .buttonGroup a, .buttonGroup > div{
     padding:8px 12px;
     margin:5px 0px;
-    border:2px solid #750000;
+    border:2px solid red;
     display: block;
     font-size:large;
-    color:#650000;
+    color:red;
     border-radius:6px;
     display: inline-block;
 }
@@ -216,7 +217,7 @@ button[type=submit],button[type=button]{
     margin:0px !important;
 }
 
-h1.pickname{
+.pickname{
     color:white;
     padding:10px;
     border-radius: 10px;

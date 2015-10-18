@@ -59,7 +59,7 @@ define(['angular', 'services-module'], function(angular, module) {
 
 		var error = function(message) {
 			return add({
-				type: 'alert-error',
+				type: 'alert-danger',
 				message: message
 			});
 		};

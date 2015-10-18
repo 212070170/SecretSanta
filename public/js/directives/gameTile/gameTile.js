@@ -13,16 +13,18 @@ define(['angular', 'directives-module'], function(angular, directives) {
 
             link: function ($scope,element, attr) {
                 $scope.dl = dataloader;
-                $scope.showAllPlayers = function(){
-                    // display loading sign
-                    // fetch all players for this specific game
-                    // display results
-                    // different colors on those who already played
 
-                    $("#allPlayers").addClass("show");
+                $scope.pickAPlayer = function (eid,uid){
+                    $scope.dl.pickAPlayer(eid,uid).success(function(data){
+                        $scope.dl.setGames(data);
+//                        notifier.success('Parabens! Voce tirou seu papelzinho!');
+                    }).error(function(){
+//                        notifier.error('Tente novamente!');
+                    });
                 }
-                $scope.showPickedFriend = function(name){
+                $scope.showPickedFriend = function(name,message){
                     $scope.$parent.pick_name = name;
+                    $scope.$parent.pick_message = message;
                     // display loading sign
                     // fetch my secret santa for this party
                     // display results
