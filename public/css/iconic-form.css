@@ -1,0 +1,37 @@
+.iconic-form{
+    position:relative;
+    padding:10px;
+    display: block;
+    width: 90%;
+}
+.iconic-form .iconic-input{
+    position:relative;
+    display:block;
+    clear:both;
+    height:50px;
+}
+.iconic-form .iconic-input i{
+    z-index:1000;
+    padding:13px 5px;
+    color:#666;
+    font-size:25px;
+
+}
+.iconic-form .iconic-input input{
+    z-index:999;
+    padding-left: 35px;
+    background-color:transparent;
+    border:2px solid #EEE;
+    color:lightblue;
+}
+.iconic-form .iconic-input input.ng-dirty{
+    border-color:olive;
+    color:olive;
+}
+.iconic-form .iconic-input i, .iconic-form .iconic-input input{
+    position:absolute;
+}
+.iconic-form > .btn{
+    float:right;
+    margin:10px 5px;
+}

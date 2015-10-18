@@ -46,14 +46,14 @@ define(['angular', 'directives-module'], function(angular, directives) {
                         $('body').css("overflow-x","auto");
                     });
 
-                    $("#"+id).click(function(){
-                        $(this).toggleClass("slide-away");
-                        if($("#"+id).attr("behavior") == "push" && $("#"+id).attr("from") == "left"){
-                            $(".container").toggleClass("push").toggleClass("push-away-left");
-                        }else if($("#"+id).attr("behavior") == "push" && $("#"+id).attr("from") == "right"){
-                            $(".container").toggleClass("push").toggleClass("push-away-right");
-                        }
-                    })
+//                    $("#"+id).click(function(){
+//                        $(this).toggleClass("slide-away");
+//                        if($("#"+id).attr("behavior") == "push" && $("#"+id).attr("from") == "left"){
+//                            $(".container").toggleClass("push").toggleClass("push-away-left");
+//                        }else if($("#"+id).attr("behavior") == "push" && $("#"+id).attr("from") == "right"){
+//                            $(".container").toggleClass("push").toggleClass("push-away-right");
+//                        }
+//                    })
                     return function ($scope, $element, $attr) {
                         $scope.$on('$destroy', function () {
                         });

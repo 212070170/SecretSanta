@@ -57,6 +57,37 @@
     <h1 class="deadCenter pickname">{{pick_name}}</h1>
 </ng-mobile-modal>
 
+    <ng-sliding-panel from="left" behavior="overlap" button-open="userSettings" id="usersettingsLeftPanel" style="visibility: hidden;">
+        <form name="form.myInfoForm" id="myInfoForm" class="myInfo iconic-form">
+            <div class="title">Minhas Informacoes</div>
+            <div class="iconic-input">
+                <i class="fa fa-user"></i>
+                <input type="text" class="form-control" ng-model="auth.user.name"/>
+            </div>
+            <div class="iconic-input">
+                <i class="fa fa-user-secret"></i>
+                <input type="text" class="form-control" ng-model="auth.user.username"/>
+            </div>
+            <div class="iconic-input">
+                <i class="fa fa-phone"></i>
+                <input type="text" class="form-control" ng-model="auth.user.tel"/>
+            </div>
+            <div class="iconic-input">
+                <i class="fa fa-envelope"></i>
+                <input type="text" class="form-control" ng-model="auth.user.email"/>
+            </div>
+            <div class="iconic-input">
+                <i class="fa fa-asterisk"></i>
+                <input type="text" class="form-control" ng-model="auth.user.password_old" placeholder="Digite sua Senha atual"/>
+            </div>
+            <div class="iconic-input">
+                <i class="fa fa-asterisk"></i>
+                <input type="text" class="form-control" ng-model="auth.user.password_new" placeholder="Trocar Senha? Senha nova"/>
+            </div>
+            <button class="btn btn-danger" ng-click="cancelChanges()">Cancelar</button>
+            <button class="btn btn-success" ng-click="saveChanges()">Salvar</button>
+        </form>
+    </ng-sliding-panel>
 
 <ng-action-menu id="confirmDelete" class="light" title="Voce deseja excluir e tirar seu nome desse evento?" btn-toggle="deleteBtn">
     <div icon="" link="confirmDelete()" behavior="click" color="#4498CC">Sim</div>

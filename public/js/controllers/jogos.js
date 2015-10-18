@@ -14,6 +14,9 @@ define(['angular',
         $scope.auth.protect();
         $scope.newEvt = {};
         $scope.game = {};
+        $scope.form = {}
+
+        $scope.originalUser = angular.copy($scope.auth.user);
 
         //enable spinner
         if($scope.dl.getGames().length == 0)
@@ -78,6 +81,16 @@ define(['angular',
             }).error(function(){
                 notifier.error("Nao foi possivel adicionar essa pessoa");
             });
+        }
+
+        $scope.cancelChanges = function(){
+            $scope.auth.user = angular.copy($scope.originalUser);
+            $scope.form.myInfoForm.$setPristine();
+            $(".slidingPanel").removeClass("slide-away");
+        }
+
+        $scope.saveChanges = function(){
+
         }
     }]);
 });
